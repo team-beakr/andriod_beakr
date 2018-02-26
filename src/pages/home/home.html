@@ -1,18 +1,63 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Dashboard</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>Something to test</p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <h2>Welcome to Beakr!</h2>
+  <ion-card>
+    <img src="assets/imgs/MU_StackedMU_4C.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Research Opp Title 1
+        </ion-card-title>
+      <p>
+        This could be like a short description of the opportunity.
+        Or this could be a list of some possible fields that opportunities
+        are searched on.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/imgs/MU_StackedMU_4C.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Research Opp Title 2
+        </ion-card-title>
+
+        <ul style="list-style: none; padding-left:0;">
+          <li><b>Job Title:</b> Research Assistant</li>
+          <li><b>Department:</b> Biology</li>
+          <li><b>Upaid/Paid:</b> Paid</li>
+          <li><b>Professor/Manager:</b> Dr. Somebody</li>
+        </ul>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        Research Opp Title 3
+        </ion-card-title>
+      <p>
+        These cards could also be a mixture of the above without the image...
+      </p>
+      <ul style="list-style: none; padding-left:0;">
+        <li><b>Job Title:</b> Research Assistant</li>
+        <li><b>Department:</b> Biology</li>
+        <li><b>Upaid/Paid:</b> Paid</li>
+        <li><b>Professor/Manager:</b> Dr. Somebody</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
