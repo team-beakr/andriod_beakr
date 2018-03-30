@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
@@ -11,8 +11,9 @@ export class SettingsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  openPage() {
-
+  pushPage(p) {
+    // console.log(p);
+    this.navCtrl.push(p);
   }
 
 }

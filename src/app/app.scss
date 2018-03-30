@@ -15,7 +15,24 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+// Styles for the navbar at the top of every page
+.toolbar-background, .toolbar-background-md {
+  background-color: $almost-black;
+}
 
-ion-content {
-  background-color: #686767;
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+  color: $faint-gray;
+}
+
+// Filler ion-card that serves as an end of content notifier
+.end-of-content-block {
+  background-color: $lightest-green;
+}
+
+// Making rounded input boxes
+.item-input ion-input, .item-input ion-textarea {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
