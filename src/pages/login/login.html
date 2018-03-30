@@ -1,0 +1,53 @@
+<ion-grid>
+  <!-- Beakr Logo -->
+  <ion-row>
+    <ion-item no-lines>
+      <img src="assets/imgs/beakr_logo.png"/>
+    </ion-item>
+  </ion-row>
+
+  <!-- Username and Password Inputs -->
+  <ion-row>
+    <ion-col offset-1 col-9>
+      <ion-item no-lines>
+        <ion-input type="text" placeholder="Username"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col offset-1 col-9>
+      <ion-item no-lines>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <!-- Remember Me Checkbox and Forgot Password link -->
+  <ion-row>
+    <ion-col offset-2 col-7>
+      <ion-item no-lines>
+        <ion-label class="small-text-label">Remember Me</ion-label>
+        <ion-toggle color="secondary" checked="false"></ion-toggle>
+      </ion-item>
+
+      <ion-item no-lines>
+        <a href="#" class="small-text-label">Forgot Password?</a>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <!-- Login Button -->
+  <ion-row>
+    <ion-col offset-2 col-6>
+      <button ion-button full (click)="doLogin()">Login</button>
+    </ion-col>
+  </ion-row>
+
+  <!-- Sign Up Button -->
+  <ion-row>
+    <ion-col offset-2 col-6>
+      <button ion-button full (click)="doSignUp()">Sign Up</button>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
