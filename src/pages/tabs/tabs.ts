@@ -10,12 +10,16 @@ export class TabsPage {
 
   DashRoot: any = 'DashboardPage';
   ProfileRoot: any = 'ProfilePage';
-  InboxRoot: any = 'InboxPage';
+  // InboxRoot: any = 'InboxPage';
   myIndex: number;
 
   constructor(navParams: NavParams) {
     // Set the active tab based on the passed index from menu.ts
     this.myIndex = navParams.data.tabIndex || 0;
+  }
+
+  search() {
+    
   }
 
 }

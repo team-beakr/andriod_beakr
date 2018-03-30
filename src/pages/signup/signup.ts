@@ -3,20 +3,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-signup',
+  templateUrl: 'signup.html',
 })
-export class LoginPage {
+export class SignupPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   doLogin() {
-    this.navCtrl.setRoot('MenuPage');
+    this.navCtrl.setRoot('LoginPage');
   }
 
   doSignUp() {
-    this.navCtrl.setRoot('SignupPage');
+    this.navCtrl.setRoot('MenuPage');
   }
 
 }

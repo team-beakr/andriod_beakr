@@ -1,13 +1,17 @@
 <ion-split-pane>
 <ion-menu [content]="content">
 
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-content>
+    <ion-item class="menu-header">
+      <div class="menu-profile-img">
+        <img src="assets/imgs/profile.jpeg"/>
+      </div>
+
+      <p>pawprint@mail.missouri.edu</p>
+      <ion-icon name="arrow-dropdown" color="secondary"></ion-icon>
+
+    </ion-item>
+
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
@@ -15,7 +19,7 @@
       </button>
       <button ion-item menuToggle>
         <!-- <ion-icon item-start name="close"></ion-icon> -->
-        <ion-icon item-start name=""></ion-icon> 
+        <ion-icon item-start name=""></ion-icon>
         <span>Close Menu</span>
       </button>
     </ion-list>

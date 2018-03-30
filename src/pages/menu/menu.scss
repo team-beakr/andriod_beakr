@@ -1,3 +1,18 @@
 page-menu {
+  .menu-header {
+    background-color: black;
+    height: 30%;
+  }
+    .menu-header p {
+      color: white;
+      display: inline;
+    }
 
+  .menu-profile-img {
+    width: 50%;
+    padding-bottom: 20px;
+  }
+    .menu-profile-img img {
+      border-radius: 50%;
+    }
 }

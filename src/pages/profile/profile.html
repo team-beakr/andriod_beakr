@@ -1,11 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons start>
+    <ion-buttons left>
       <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+        <ion-icon name="menu"></ion-icon>
+      </button>
     </ion-buttons>
-    <ion-title>Profile</ion-title>
+    <ion-title align="center">
+      <img width="40%" src="assets/imgs/beakr_logo.png"/>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -15,51 +17,58 @@
     <ion-row>
       <ion-col col-2></ion-col>
       <ion-col col-8>
-        <ion-card>
-          <img src="assets/imgs/profile.jpeg"/>
+        <ion-card class="profile-pic">
+          <img class="profile-pic" src="assets/imgs/profile.jpeg"/>
         </ion-card>
       </ion-col>
       <ion-col col-2></ion-col>
     </ion-row>
   </ion-grid>
 
-  <ion-card>
-    <ion-card-content>
-      <p>
-        Fist Name: Sam
-      </p>
-    </ion-card-content>
-  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>First Name:</ion-label>
+      <ion-input value="Sam"></ion-input>
+    </ion-item>
 
-  <ion-card>
-    <ion-card-content>
-      <p>
-        Last Name: Not Sure
-      </p>
-    </ion-card-content>
-  </ion-card>
+    <ion-item>
+      <ion-label stacked>Last Name:</ion-label>
+      <ion-input value="Not Sure"></ion-input>
+    </ion-item>
 
-  <ion-card>
-    <ion-card-content>
-      <p>
-        Standing: Freshman
-      </p>
-    </ion-card-content>
-  </ion-card>
+    <ion-item>
+      <ion-label stacked>Email:</ion-label>
+      <ion-input type="email" value="pawprint@mail.missouri.edu"></ion-input>
+    </ion-item>
 
-  <ion-card>
-    <ion-card-content>
-      <p>
-        GPA: 1.20
-      </p>
-    </ion-card-content>
-  </ion-card>
+    <ion-item>
+      <ion-label stacked>Standing:</ion-label>
+      <ion-select [(ngModel)]="standing" okText="Okay" cancelText="Dismiss">>
+        <ion-option value="Fre">Freshman</ion-option>
+        <ion-option value="Sop">Sophmore</ion-option>
+        <ion-option value="Jun">Junior</ion-option>
+        <ion-option value="Sen">Senior</ion-option>
+      </ion-select>
+    </ion-item>
 
-  <ion-card>
-    <ion-card-content>
-      <p>
-        Big fan of Cheese.
-      </p>
-    </ion-card-content>
-  </ion-card>
+    <ion-item>
+      <ion-label stacked>Major:</ion-label>
+      <ion-input value="Computers"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Minor:</ion-label>
+      <ion-input value="Rock"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>GPA:</ion-label>
+      <ion-input value="1.20"></ion-input>
+    </ion-item>
+
+    </ion-list>
+
+    <ion-buttons right>
+      <button ion-button small round >Save Updates</button>
+    </ion-buttons>
 </ion-content>

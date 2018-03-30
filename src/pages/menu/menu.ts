@@ -29,14 +29,23 @@ export class MenuPage {
   // Reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
 
+  // pages: PageInterface[] = [
+  //   { title: 'Dashboard', pageName: 'TabsPage', tabComponent: 'DashboardPage', index: 0, icon: 'home' },
+  //   { title: 'Profile', pageName: 'TabsPage', tabComponent: 'ProfilePage', index: 2, icon: 'contact' },
+  //   { title: 'Inbox', pageName: 'TabsPage', tabComponent: 'InboxPage', index: 1, icon: 'mail-open' },
+  //   { title: 'Search', pageName: 'SearchPage', icon: 'search' },
+  //   { title: 'Settings', pageName: 'SettingsPage', icon: 'settings' },
+  //   { title: 'About', pageName: 'AboutPage', tabComponent: 'AboutPage', icon: '' },
+  //   { title: 'Contact Us', pageName: 'ContactPage', icon: '' },
+  // ];
+
   pages: PageInterface[] = [
-    { title: 'Dashboard', pageName: 'TabsPage', tabComponent: 'DashboardPage', index: 0, icon: 'home' },
-    { title: 'Profile', pageName: 'TabsPage', tabComponent: 'ProfilePage', index: 1, icon: 'contact' },
-    { title: 'Inbox', pageName: 'TabsPage', tabComponent: 'InboxPage', index: 2, icon: 'mail-open' },
-    { title: 'Search', pageName: 'SearchPage', icon: 'search' },
-    { title: 'Settings', pageName: 'SettingsPage', icon: 'settings' },
-    { title: 'About', pageName: 'AboutPage', tabComponent: 'AboutPage', icon: '' },
-    { title: 'Contact Us', pageName: 'ContactPage', icon: '' },
+    { title: 'Home', pageName: 'TabsPage', tabComponent: 'DashboardPage', index: 0, icon: 'home' },
+    { title: 'Inbox', pageName: 'InboxPage', icon: 'filing' },
+    { title: 'Update Interest', pageName: 'InterestPage', icon: 'send' },
+    { title: 'Upload Resume', pageName: 'ResumePage', icon: 'cloud-upload' },
+    { title: 'Notifications', pageName: 'NotificationsPage', icon: 'alert' },
+    { title: 'Settings', pageName: 'SettingsPage', icon: 'construct'}
   ];
 
   constructor(public navCtrl: NavController) { }
