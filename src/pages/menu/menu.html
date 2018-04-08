@@ -6,10 +6,10 @@
       <div class="menu-profile-img">
         <img src="assets/imgs/profile.jpeg"/>
       </div>
-
-      <p>pawprint@mail.missouri.edu</p>
-      <ion-icon name="arrow-dropdown" color="secondary"></ion-icon>
-
+      <div menuClose (click)="openPage({pageName:'TabsPage', tabComponent: 'ProfilePage', index: 2})">
+        <p>pawprint@mail.missouri.edu</p>
+        <ion-icon name="arrow-dropdown" color="secondary"></ion-icon>
+      </div>
     </ion-item>
 
     <ion-list>

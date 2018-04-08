@@ -24,10 +24,10 @@
 
   <!-- Remember Me Checkbox and Forgot Password link -->
   <ion-row>
-    <ion-col offset-2 col-7>
+    <ion-col offset-2 col-8>
       <ion-item no-lines>
         <ion-label class="small-text-label">Remember Me</ion-label>
-        <ion-toggle color="secondary" checked="false"></ion-toggle>
+        <ion-toggle color="primary" checked="false"></ion-toggle>
       </ion-item>
 
       <ion-item no-lines>
@@ -39,14 +39,14 @@
   <!-- Login Button -->
   <ion-row>
     <ion-col offset-2 col-6>
-      <button ion-button full (click)="doLogin()">Login</button>
+      <button ion-button round full (click)="doLogin()">Login</button>
     </ion-col>
   </ion-row>
 
   <!-- Sign Up Button -->
   <ion-row>
     <ion-col offset-2 col-6>
-      <button ion-button full (click)="doSignUp()">Sign Up</button>
+      <button ion-button round color="secondary" full (click)="doSignUp()">Sign Up</button>
     </ion-col>
   </ion-row>
 

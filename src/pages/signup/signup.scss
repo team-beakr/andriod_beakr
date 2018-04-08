@@ -1,5 +1,6 @@
 page-signup {
-  background-color: #686767;
+  background-color: $almost-black;
+  color: $text-color;
 
   ion-item {
     -moz-border-radius: 50px;
@@ -8,7 +9,12 @@ page-signup {
     margin-bottom: 10px;
   }
 
-  .small-text-label {
-    font-size: 75%;
+  .item, .item-block, .item-md {
+    background-color: $almost-black;
+  }
+
+  ion-input {
+    background-color: $faint-gray;
+    color: black;
   }
 }

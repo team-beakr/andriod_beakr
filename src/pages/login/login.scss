@@ -1,14 +1,20 @@
 page-login {
-  background-color: #686767;
+  background-color: $almost-black;
 
-  ion-item {
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  .item, .item-block, .item-md {
+    background-color: $almost-black;
   }
 
+  ion-input {
+    background-color: $faint-gray;
+  }
+
+  // .toggle-md .toggle-inner {
+  //   background-color: $main-green;
+  // }
+
   .small-text-label {
+    color: $main-green;
     font-size: 75%;
   }
 }
