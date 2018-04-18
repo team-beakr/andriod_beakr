@@ -13,7 +13,7 @@
 
 <ion-content padding>
   <!-- Add in (onclick) functionality -->
-  <ion-card>
+  <!-- <ion-card>
     <ion-card-content>
       <ion-card-title>
         Subject line of email
@@ -37,6 +37,22 @@
       <ion-item>
         <p>
           From: Someone
+        </p>
+      </ion-item>
+      <small>
+        December 3, 2017 5:39 PM
+      </small>
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-card *ngFor="let m of messages">
+    <ion-card-content>
+      <ion-card-title>
+        {{ m.company.catchPhrase }}
+      </ion-card-title>
+      <ion-item>
+        <p>
+          From: {{ m.name }}
         </p>
       </ion-item>
       <small>

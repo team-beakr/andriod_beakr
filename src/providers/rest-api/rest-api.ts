@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { RequestOptions, Headers } from '@angular/http';
+// import { RequestOptions, Headers } from '@angular/http';
 
 /*
   Generated class for the RestApiProvider provider.
@@ -43,6 +43,25 @@ export class RestApi {
 
     return new Promise(resolve => {
       this.http.get(this.apiUrl+'/posts')
+        .subscribe(
+          data => {
+            this.data = data;
+            resolve(this.data);
+          }, err => {
+            console.log(err);
+          }
+        );
+    });
+
+  }
+
+  getTodos() {
+    if (this.data) {
+      return Promise.resolve(this.data);
+    }
+
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'/todos')
         .subscribe(
           data => {
             this.data = data;

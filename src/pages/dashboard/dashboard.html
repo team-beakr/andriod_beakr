@@ -30,6 +30,23 @@
     </ion-card-content>
   </ion-card>
 
+  <ion-card *ngFor="let d of data">
+    <ion-card-content>
+      <ion-card-title align="center">
+        {{ d.title }}
+      </ion-card-title>
+      <p style="font-style:italic; color:grey;">
+        December 3
+      </p>
+      <p>
+        {{ d.body }}
+      </p>
+      <ion-buttons right>
+        <button ion-button small outline round >Get Started ></button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+
   <ion-card>
     <ion-card-content class="end-of-content-block">
     </ion-card-content>
