@@ -6,38 +6,45 @@
     </ion-item>
   </ion-row>
 
-  <ion-row>
-    <ion-col offset-1 col-9>
-      <ion-item no-lines>
-        <ion-input type="email" placeholder="School Email"></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row>
+  <div *ngIf="formError" text-center>
+    <p *ngIf="formError == 'true' " style="color: #ea6153;">Please fill out all details accurately.</p>
+    <p *ngIf="formError == 'true' " style="color: #ea6153;">All fields are required.</p>
+    <p *ngIf="formError == 'pass' " style="color: #ea6153;">Passwords Need to match.</p>
+  </div>
+  <form #form="ngForm" [formGroup]="signUpForm" (ngSubmit)="doSignUp()">
+    <ion-row>
+      <ion-col offset-1 col-9>
+        <ion-item no-lines>
+          <ion-input formControlName="email" [(ngModel)]="email" type="email" placeholder="School Email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
-  <!-- Username and Password Inputs -->
-  <ion-row>
-    <ion-col offset-1 col-9>
-      <ion-item no-lines>
-        <ion-input type="text" placeholder="Username"></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row>
+    <!-- Username and Password Inputs -->
+    <ion-row>
+      <ion-col offset-1 col-9>
+        <ion-item no-lines>
+          <ion-input formControlName="username" [(ngModel)]="username" type="text" placeholder="Username"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
-  <ion-row>
-    <ion-col offset-1 col-9>
-      <ion-item no-lines>
-        <ion-input type="password" placeholder="Password"></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row>
+    <ion-row>
+      <ion-col offset-1 col-9>
+        <ion-item no-lines>
+          <ion-input formControlName="password" [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
-  <ion-row>
-    <ion-col offset-1 col-9>
-      <ion-item no-lines>
-        <ion-input type="password" placeholder="Confirm Password"></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row>
+    <ion-row>
+      <ion-col offset-1 col-9>
+        <ion-item no-lines>
+          <ion-input formControlName="password2" [(ngModel)]="password2" type="password" placeholder="Confirm Password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </form>
 
   <!-- Sign Up Button -->
   <ion-row>

@@ -14,12 +14,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'interest.html',
 })
 export class InterestPage {
+  public interests;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {
+    let ls = localStorage.getItem("interests");
+    if (ls != 'undefined' && ls != null) {
+      this.interests = JSON.parse(ls);
+    }
+
+    if(this.interests) {
+        console.log('A user is already created');
+    }
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad InterestPage');
+    // console.log('ionViewDidLoad InterestPage');
   }
 
 }

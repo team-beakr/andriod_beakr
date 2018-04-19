@@ -9,26 +9,41 @@ import { RestApi } from '../../providers/rest-api/rest-api';
   providers: [RestApi]
 })
 export class DashboardPage {
-  data: any;
+  // data: any;
+  offerings: any;
+  // user: any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public api: RestApi
   ) {
-    api.getPosts()
-    .then(data => {
-      this.data = data;
 
-      console.log(data);
-      // for (let d of data) {
-      //   console.log(d.name);
-      // }
-    })
+    api.getOfferings()
+      .then(offerings => {
+        this.offerings = offerings;
+
+        console.log(offerings);
+      })
+
+    // api.getUser('-L8cb0C5bvG_7NBaMiib')
+    //   .then(user => {
+    //     this.user = user;
+    //
+    //     console.log(user);
+    //   })
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DashboardPage');
+    // console.log('ionViewDidLoad DashboardPage');
+  }
+
+  viewOpportunity(opp) {
+    // console.log('view opportunity');
+    // console.log(opp);
+    this.navCtrl.push('ResearchOppPage', {
+      opportunity: opp
+    });
   }
 
 }

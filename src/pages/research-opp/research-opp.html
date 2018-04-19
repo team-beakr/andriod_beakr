@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="color:white;">{{ opportunity.object.title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title align="center">
+        {{ opportunity.object.title }}
+      </ion-card-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2></ion-col>
+          <ion-col col-8>
+            <ion-card class="profile-pic">
+              <img class="profile-pic" src="assets/imgs/profile.jpeg"/>
+            </ion-card>
+          </ion-col>
+          <ion-col col-2></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-card text-center>
+            <ion-label>Professor's Name</ion-label>
+          </ion-card>
+        </ion-row>
+      </ion-grid>
+
+
+      <ion-card-title text-center class="subject-titles">Summary:</ion-card-title>
+      <p>
+        {{ opportunity.object.summary }}
+      </p>
+
+      <ion-card padding>
+        <span class="bold-p">Desired Major(s):</span>
+        <ul>
+          <li *ngFor="let major of opportunity.object.majors">
+            {{ major }}
+          </li>
+        </ul>
+      </ion-card>
+
+      <ion-card padding>
+        <p class="inline bold-p">
+          Available:
+        </p>
+        <p class="inline">
+          {{ opportunity.object.available }}
+        </p>
+      </ion-card>
+
+      <ion-card padding *ngIf="opportunity.object.compensation">
+        <p class="inline bold-p">
+          Compensation:
+        </p>
+        <p class="inline">
+          {{ opportunity.object.compensation }}
+        </p>
+      </ion-card>
+
+      <ion-card-title text-center class="subject-titles">Full Description:</ion-card-title>
+      <p>
+        {{ opportunity.object.detailedDescription }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -7,41 +7,47 @@
   </ion-row>
 
   <!-- Username and Password Inputs -->
-  <ion-row>
-    <ion-col offset-1 col-9>
-      <ion-item no-lines>
-        <ion-input type="text" placeholder="Username"></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col offset-1 col-9>
-      <ion-item no-lines>
-        <ion-input type="password" placeholder="Password"></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row>
+  <div *ngIf="formError" text-center>
+    <p style="color: #ea6153;">Please fill out all details accurately.</p>
+    <p style="color: #ea6153;">All fields are required.</p>
+  </div>
+  <form #form="ngForm" [formGroup]="loginForm" (ngSubmit)="doLogin()">
+    <ion-row>
+      <ion-col offset-1 col-9>
+        <ion-item no-lines>
+          <ion-input type="text" formControlName="username" [(ngModel)]="username" placeholder="Username"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offset-1 col-9>
+        <ion-item no-lines>
+          <ion-input type="password" formControlName="password" [(ngModel)]="password" placeholder="Password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
-  <!-- Remember Me Checkbox and Forgot Password link -->
-  <ion-row>
-    <ion-col offset-2 col-8>
-      <ion-item no-lines>
-        <ion-label class="small-text-label">Remember Me</ion-label>
-        <ion-toggle color="primary" checked="false"></ion-toggle>
-      </ion-item>
+    <!-- Remember Me Checkbox and Forgot Password link -->
+    <ion-row>
+      <ion-col offset-2 col-8>
+        <ion-item no-lines>
+          <ion-label class="small-text-label">Remember Me</ion-label>
+          <ion-toggle color="primary" checked="false"></ion-toggle>
+        </ion-item>
 
-      <ion-item no-lines>
-        <a href="#" class="small-text-label">Forgot Password?</a>
-      </ion-item>
-    </ion-col>
-  </ion-row>
+        <ion-item no-lines>
+          <a href="#" class="small-text-label">Forgot Password?</a>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
-  <!-- Login Button -->
-  <ion-row>
-    <ion-col offset-2 col-6>
-      <button ion-button round full (click)="doLogin()">Login</button>
-    </ion-col>
-  </ion-row>
+    <!-- Login Button -->
+    <ion-row>
+      <ion-col offset-2 col-6>
+        <button ion-button round full type="submit">Login</button>
+      </ion-col>
+    </ion-row>
+  </form>
 
   <!-- Sign Up Button -->
   <ion-row>
