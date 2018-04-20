@@ -13,7 +13,21 @@
 
 
 <ion-content padding>
-  <ion-card>
+  <ion-card *ngFor="let m of messages">
+    <ion-card-content>
+      <ion-card-title>{{ m.subject }}</ion-card-title>
+      <p>{{ m.body }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-card *ngFor="let m of messages">
+    <ion-card-content>
+      <ion-card-title>{{ m.object.subject }}</ion-card-title>
+      <p>{{ m.object.msg_body }}</p>
+    </ion-card-content>
+  </ion-card> -->
+
+  <!-- <ion-card>
     <ion-card-content>
       <p>Sample Notification:</p>
       <p>You need to update something..</p>
@@ -32,7 +46,7 @@
       <p>Sample Notification:</p>
       <p>You need to update something..</p>
     </ion-card-content>
-  </ion-card>
+  </ion-card> -->
 
   <ion-card>
     <ion-card-content class="end-of-content-block">

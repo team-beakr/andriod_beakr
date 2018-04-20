@@ -30,6 +30,12 @@ export class InboxPage {
       })
   }
 
+  viewInboxItem(ii) {
+    this.navCtrl.push('InboxItemPage', {
+      item: ii
+    });
+  }
+
   ionViewDidLoad() {
     // console.log('ionViewDidLoad InboxPage');
   }

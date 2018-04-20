@@ -10,6 +10,7 @@ export class TabsPage {
 
   DashRoot: any = 'DashboardPage';
   ProfileRoot: any = 'ProfilePage';
+  SearchRoot: any = 'SearchPage';
   // InboxRoot: any = 'InboxPage';
   myIndex: number;
 

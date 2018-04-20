@@ -15,19 +15,25 @@
 <ion-content padding>
   <ion-item>
     <ion-label stacked>Add an Interest</ion-label>
-    <ion-input placeholder="New interest"></ion-input>
+    <ion-input [(ngModel)]="interest" [ngModelOptions]="{standalone: true}" placeholder="New interest"></ion-input>
   </ion-item>
+  <ion-item no-lines>
+    <button ion-button (click)="addInterest()">
+      Add Interest
+    </button>
+</ion-item>
 
   <ion-card>
     <ion-list-header><b>Your Interests:</b></ion-list-header>
     <!-- For each interest in the system list them out -->
     <ion-list>
-      <ion-item><b>Turtles</b> <ion-icon color="danger" name="close-circle"></ion-icon></ion-item>
+      <ion-item *ngFor="let i of interests"><b>{{ i.name }}</b> <ion-icon (click)="removeInterest(i.name)" color="danger" name="close-circle"></ion-icon></ion-item>
+      <!-- <ion-item><b>Turtles</b> <ion-icon color="danger" name="close-circle"></ion-icon></ion-item>
       <ion-item><b>Computers</b> <ion-icon color="danger" name="close-circle"></ion-icon></ion-item>
       <ion-item><b>Rocks</b> <ion-icon color="danger" name="close-circle"></ion-icon></ion-item>
       <ion-item><b>HTML</b> <ion-icon color="danger" name="close-circle"></ion-icon></ion-item>
       <ion-item><b>CSS</b> <ion-icon color="danger" name="close-circle"></ion-icon></ion-item>
-      <ion-item><b>IONIC</b> <ion-icon color="danger" name="close-circle"></ion-icon></ion-item>
+      <ion-item><b>IONIC</b> <ion-icon color="danger" name="close-circle"></ion-icon></ion-item> -->
     </ion-list>
   </ion-card>
 

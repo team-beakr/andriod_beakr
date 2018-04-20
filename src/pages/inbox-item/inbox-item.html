@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title align="center">
+      <img width="40%" src="assets/imgs/beakr_logo.png"/>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <div>
+      <!-- <label>Subject:</label> -->
+      <ion-chip>
+        <ion-label class="bold">Subject:</ion-label>
+      </ion-chip>
+      <ion-item text-wrap no-lines>{{ item.object.subject }}</ion-item>
+    </div>
+    <div>
+      <!-- <label>To:</label> -->
+      <ion-chip>
+        <ion-label class="bold">To:</ion-label>
+      </ion-chip>
+      <ion-item text-wrap no-lines>{{ item.object.to }}</ion-item>
+    </div>
+    <div>
+      <!-- <label>From:</label> -->
+      <ion-chip>
+        <ion-label class="bold">From:</ion-label>
+      </ion-chip>
+      <ion-item text-wrap no-lines>{{ item.object.from }}</ion-item>
+    </div>
+    <div>
+      <!-- <label>Date:</label> -->
+      <ion-chip>
+        <ion-label class="bold">Date:</ion-label>
+      </ion-chip>
+      <ion-item text-wrap no-lines>{{ item.object.date_sent }}</ion-item>
+    </div>
+    <!-- <span>{{ item.object.to }}</span>
+    <span>{{ item.object.from }}</span>
+    <span>{{ item.object.date_sent }}</span> -->
+    <ion-card>
+      <ion-item text-wrap>{{ item.object.msg_body }}</ion-item>
+    </ion-card>
+  </ion-list>
+
+  <button ion-item color="primary">
+    <ion-icon item-start name="open"></ion-icon>
+    <span ion-text>Reply</span>
+  </button>
+  <button ion-item color="danger">
+    <ion-icon item-start name="trash"></ion-icon>
+    <span ion-text>Delete</span>
+  </button>
+
+</ion-content>
