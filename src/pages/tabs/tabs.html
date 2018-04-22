@@ -1,5 +1,5 @@
 <ion-tabs [selectedIndex]="myIndex">
   <ion-tab [root]="DashRoot" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab (click)="search()" tabTitle="Search" tabIcon="search"></ion-tab>
+  <ion-tab [root]="SearchRoot" tabTitle="Search" tabIcon="search"></ion-tab>
   <ion-tab [root]="ProfileRoot" tabTitle="Profile" tabIcon="contact"></ion-tab>
 </ion-tabs>

@@ -29,6 +29,9 @@ export class MenuPage {
   // Reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
 
+  public local_user;
+  user_email: string;
+
   // pages: PageInterface[] = [
   //   { title: 'Dashboard', pageName: 'TabsPage', tabComponent: 'DashboardPage', index: 0, icon: 'home' },
   //   { title: 'Profile', pageName: 'TabsPage', tabComponent: 'ProfilePage', index: 2, icon: 'contact' },
@@ -43,12 +46,28 @@ export class MenuPage {
     { title: 'Home', pageName: 'TabsPage', tabComponent: 'DashboardPage', index: 0, icon: 'home' },
     { title: 'Inbox', pageName: 'InboxPage', icon: 'filing' },
     { title: 'Update Interest', pageName: 'InterestPage', icon: 'send' },
-    { title: 'Upload Resume', pageName: 'ResumePage', icon: 'cloud-upload' },
+    { title: 'Resume', pageName: 'ResumePage', icon: 'clipboard' },
     { title: 'Notifications', pageName: 'NotificationsPage', icon: 'alert' },
     { title: 'Settings', pageName: 'SettingsPage', icon: 'construct'}
   ];
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController) {
+    let ls = localStorage.getItem("local_user");
+    if (ls != 'undefined' && ls != null) {
+      this.local_user = JSON.parse(ls);
+    }
+
+    if (this.local_user.email != 'undefined') {this.user_email = this.local_user.email;}
+  }
+
+  refreshEmail() {
+    let ls = localStorage.getItem("local_user");
+    if (ls != 'undefined' && ls != null) {
+      this.local_user = JSON.parse(ls);
+    }
+
+    if (this.local_user.email != 'undefined') {this.user_email = this.local_user.email;}
+  }
 
   openPage(page: PageInterface) {
     let params = {};

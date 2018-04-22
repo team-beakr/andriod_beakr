@@ -7,7 +7,8 @@
         <img src="assets/imgs/profile.jpeg"/>
       </div>
       <div menuClose (click)="openPage({pageName:'TabsPage', tabComponent: 'ProfilePage', index: 2})">
-        <p>pawprint@mail.missouri.edu</p>
+        <!-- <p>pawprint@mail.missouri.edu</p> -->
+        <p>{{ user_email }}</p>
         <ion-icon name="arrow-dropdown" color="secondary"></ion-icon>
       </div>
     </ion-item>

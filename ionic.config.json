@@ -2,6 +2,12 @@
   "name": "beakr",
   "app_id": "",
   "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://beakr-api.herokuapp.com"
+    }
+  ],
   "integrations": {
     "cordova": {}
   }

@@ -11,7 +11,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding ng-app="MyApp">
 
   <ion-grid>
     <ion-row>
@@ -23,52 +23,58 @@
       </ion-col>
       <ion-col col-2></ion-col>
     </ion-row>
+    <ion-row>
+      <ion-card text-center>
+        <ion-label>{{ user.username }}</ion-label>
+      </ion-card>
+    </ion-row>
   </ion-grid>
 
   <ion-list>
     <ion-item>
       <ion-label stacked>First Name:</ion-label>
-      <ion-input value="Sam"></ion-input>
+      <ion-input [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}" value="{{ user.firstName }}" placeholder="ex: Jane"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Last Name:</ion-label>
-      <ion-input value="Not Sure"></ion-input>
+      <ion-input [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}" value="{{ user.lastName }}" placeholder="ex: Doe"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Email:</ion-label>
-      <ion-input type="email" value="pawprint@mail.missouri.edu"></ion-input>
+      <!-- <ion-input type="email" value="pawprint@mail.missouri.edu"></ion-input> -->
+      <ion-input type="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" placeholder="example@mail.com"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Standing:</ion-label>
-      <ion-select [(ngModel)]="standing" okText="Okay" cancelText="Dismiss">>
-        <ion-option value="Fre">Freshman</ion-option>
-        <ion-option value="Sop">Sophmore</ion-option>
-        <ion-option value="Jun">Junior</ion-option>
-        <ion-option value="Sen">Senior</ion-option>
+      <ion-select [(ngModel)]="user.standing" okText="Okay" cancelText="Dismiss">>
+        <ion-option value="Freshman">Freshman</ion-option>
+        <ion-option value="Sophmore">Sophmore</ion-option>
+        <ion-option value="Junior">Junior</ion-option>
+        <ion-option value="Senior">Senior</ion-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Major:</ion-label>
-      <ion-input value="Computers"></ion-input>
+      <ion-input [(ngModel)]="major" [ngModelOptions]="{standalone: true}" value="{{ user.major }}" placeholder="ex: Computer Science"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Minor:</ion-label>
-      <ion-input value="Rock"></ion-input>
+      <ion-input [(ngModel)]="minor" [ngModelOptions]="{standalone: true}" value="{{ user.minor }}" placeholder="ex: Business"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>GPA:</ion-label>
-      <ion-input value="1.20"></ion-input>
+      <ion-input [(ngModel)]="gpa" [ngModelOptions]="{standalone: true}" value="{{ user.gpa }}" placeholder="ex: 4.0"></ion-input>
     </ion-item>
 
     </ion-list>
 
     <ion-buttons right>
-      <button ion-button small round >Save Updates</button>
+      <button ion-button small round (click)="updateProfile()">Save Updates</button>
     </ion-buttons>
 </ion-content>

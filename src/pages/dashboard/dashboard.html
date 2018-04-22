@@ -30,6 +30,23 @@
     </ion-card-content>
   </ion-card>
 
+  <ion-card *ngFor="let o of offerings" (click)="viewOpportunity(o)">
+    <ion-card-content>
+      <ion-card-title align="center">
+        {{ o.object.title }}
+      </ion-card-title>
+      <p style="font-style:italic; color:grey;">
+        Available: {{ o.object.available }}
+      </p>
+      <p>
+        {{ o.object.summary }}
+      </p>
+      <ion-buttons center>
+        <button ion-button small outline round >View This Opportunity</button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+
   <ion-card>
     <ion-card-content class="end-of-content-block">
     </ion-card-content>

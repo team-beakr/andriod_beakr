@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title align="center">
+      <img width="40%" src="assets/imgs/beakr_logo.png"/>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <ion-searchbar (ionInput)="getTopics($event)" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)"></ion-searchbar> -->
+  <ion-searchbar (ionInput)="searchOfferings($event)" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let offering of offerings" (click)="viewOpportunity(offering)">
+      {{ offering.object.title }}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
