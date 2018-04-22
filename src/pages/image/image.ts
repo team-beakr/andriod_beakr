@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ResumePage page.
+ * Generated class for the ImagePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,20 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-resume',
-  templateUrl: 'resume.html',
+  selector: 'page-image',
+  templateUrl: 'image.html',
 })
-export class ResumePage {
+export class ImagePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad ResumePage');
-  // }
-
-  pushPage() {
-    this.navCtrl.push('ImagePage');
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ImagePage');
   }
 
 }

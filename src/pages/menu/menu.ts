@@ -46,7 +46,7 @@ export class MenuPage {
     { title: 'Home', pageName: 'TabsPage', tabComponent: 'DashboardPage', index: 0, icon: 'home' },
     { title: 'Inbox', pageName: 'InboxPage', icon: 'filing' },
     { title: 'Update Interest', pageName: 'InterestPage', icon: 'send' },
-    { title: 'Upload Resume', pageName: 'ResumePage', icon: 'cloud-upload' },
+    { title: 'Resume', pageName: 'ResumePage', icon: 'clipboard' },
     { title: 'Notifications', pageName: 'NotificationsPage', icon: 'alert' },
     { title: 'Settings', pageName: 'SettingsPage', icon: 'construct'}
   ];

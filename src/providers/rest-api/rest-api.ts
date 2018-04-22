@@ -17,9 +17,9 @@ export class RestApi {
   user: any;
   offerings: any;
   messages: any;
-  base_apiURL = '/api';
+  // base_apiURL = '/api';
   // Proxy for apiURL is in ionic.config.json
-  // base_apiURL = 'https://beakr-api.herokuapp.com';
+  base_apiURL = 'https://beakr-api.herokuapp.com';
 
   constructor(public http: HttpClient) {
     // console.log('Hello RestApiProvider Provider');

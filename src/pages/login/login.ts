@@ -17,7 +17,7 @@ export class LoginPage {
   username: string;
   password: string;
   loginForm: FormGroup;
-  formError: boolean;
+  formError: string;
 
   constructor(
     public navCtrl: NavController,
@@ -25,7 +25,7 @@ export class LoginPage {
     public api: RestApi,
     public formBuilder: FormBuilder
   ) {
-      this.checkUser();
+      // this.checkUser();
 
       this.loginForm = formBuilder.group({
         username: ['', Validators.compose([Validators.required])],
@@ -63,41 +63,59 @@ export class LoginPage {
   doLogin() {
     localStorage.removeItem('local_user');
 
-    if(!this.loginForm.valid){
-      this.formError = true;
+    if (!this.loginForm.valid){
+      this.formError = 'true';
+    } else if (this.username != 'demoUser') {
+      this.formError = 'invalid';
     } else {
-      this.checkUser(); //REMOVE THIS FOR THE DEMO
+      // this.checkUser();
 
       console.log(this.username);
-      console.log(this.password);
-
-      if (this.user = 'undefined') {
+      // if (this.username == 'demoUser') {
+        // console.log(this.password);
+        //
+        // if (this.user = 'undefined') {
+        //   this.user = {
+        //     // "email": {
+        //     //   "domain":"gmail.com",
+        //     //   "username":"jpm61704"
+        //     // },
+        //     // "faculty":null,
+        //     // "name": {
+        //     //   "middleName":"Paul",
+        //     //   "lastName":"Martin",
+        //     //   "firstName":"Jack"
+        //     // },
+        //     // "student":null
+        //
+        //     "email": 'jpm61704@gmail.com',
+        //   	"username": 'demo',
+        //   	"name": {
+        //   		"middleName": 'Paul',
+        //   		"lastName": 'Martin',
+        //   		"firstName": 'Jack'
+        //   	},
+        //     "standing": 'Senior',
+        //     "major": 'Computer Science',
+        //     "minor": 'Math',
+        //     "gpa": '3.98'
+        //   }
+        // }
         this.user = {
-          // "email": {
-          //   "domain":"gmail.com",
-          //   "username":"jpm61704"
-          // },
-          // "faculty":null,
-          // "name": {
-          //   "middleName":"Paul",
-          //   "lastName":"Martin",
-          //   "firstName":"Jack"
-          // },
-          // "student":null
-
           "email": 'jpm61704@gmail.com',
-        	"username": 'demo',
-        	"name": {
-        		"middleName": 'Paul',
-        		"lastName": 'Martin',
-        		"firstName": 'Jack'
-        	},
+          "username": 'demoUser',
+          "name": {
+            "middleName": 'Paul',
+            "lastName": 'Martin',
+            "firstName": 'Jack'
+          },
           "standing": 'Senior',
           "major": 'Computer Science',
           "minor": 'Math',
           "gpa": '3.98'
         }
-      }
+
+      // }
 
       localStorage.setItem("local_user", JSON.stringify(
         this.user

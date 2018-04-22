@@ -8,8 +8,9 @@
 
   <!-- Username and Password Inputs -->
   <div *ngIf="formError" text-center>
-    <p style="color: #ea6153;">Please fill out all details accurately.</p>
-    <p style="color: #ea6153;">All fields are required.</p>
+    <p *ngIf="formError == 'true' "  style="color: #ea6153;">Please fill out all details accurately.</p>
+    <p *ngIf="formError == 'true' "  style="color: #ea6153;">All fields are required.</p>
+    <p *ngIf="formError == 'invalid' "  style="color: #ea6153;">Invalid Username and Password.</p>
   </div>
   <form #form="ngForm" [formGroup]="loginForm" (ngSubmit)="doLogin()">
     <ion-row>
